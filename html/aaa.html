@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scenic Landscape</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .background {
+            background-image: url(/家居背景.jpg);
+            /* 替换为实际图片链接 */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+
+        .search-bar {
+            margin-top: -40px;
+            width: 60%;
+            max-width: 600px;
+            padding: 10px;
+            border-radius: 25px;
+            border: none;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+        <input type="text" id="searchInput" class="search-bar" placeholder="Search the web">
+        <div class="icons">
+        </div>
+    </div>
+    <script>
+        document.getElementById('searchInput').addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                var query = this.value;
+                window.location.href = 'https://www.baidu.com/s?wd=' + encodeURIComponent(query);
+            }
+        });
+    </script>
+</body>
+
+</html>
